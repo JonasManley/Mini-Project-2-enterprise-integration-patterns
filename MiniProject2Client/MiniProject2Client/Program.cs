@@ -18,7 +18,8 @@ namespace MiniProject2Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form form = new Form1();
+            Application.Run(form);
 
 
             IPAddress ip = IPAddress.Parse("127.0.0.1");
@@ -26,14 +27,13 @@ namespace MiniProject2Client
 
             //TcpListener serverSocket = new TcpListener(6789);
             serverSocket.Start();
-
+         
 
             while (true)
             {
                 using (TcpClient connectionSocket = serverSocket.AcceptTcpClient())
                 {
                     Console.WriteLine("Server activated now");
-                    LabelStart.
                     Service service = new Service(connectionSocket);
                     //Use Task and delegates
 
