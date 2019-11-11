@@ -1,0 +1,9 @@
+C:\Users\Jonas\Desktop\MiniProject2Client\MiniProject2Client\bin\Debug\MiniProject2Client.exe.config
+C:\Users\Jonas\Desktop\MiniProject2Client\MiniProject2Client\bin\Debug\MiniProject2Client.exe
+C:\Users\Jonas\Desktop\MiniProject2Client\MiniProject2Client\bin\Debug\MiniProject2Client.pdb
+C:\Users\Jonas\Desktop\MiniProject2Client\MiniProject2Client\obj\Debug\MiniProject2Client.csprojAssemblyReference.cache
+C:\Users\Jonas\Desktop\MiniProject2Client\MiniProject2Client\obj\Debug\MiniProject2Client.Properties.Resources.resources
+C:\Users\Jonas\Desktop\MiniProject2Client\MiniProject2Client\obj\Debug\MiniProject2Client.csproj.GenerateResource.cache
+C:\Users\Jonas\Desktop\MiniProject2Client\MiniProject2Client\obj\Debug\MiniProject2Client.csproj.CoreCompileInputs.cache
+C:\Users\Jonas\Desktop\MiniProject2Client\MiniProject2Client\obj\Debug\MiniProject2Client.exe
+C:\Users\Jonas\Desktop\MiniProject2Client\MiniProject2Client\obj\Debug\MiniProject2Client.pdb
