@@ -12,6 +12,7 @@ namespace MiniProject2Server
         private string date;
         private string color;
         private int price;
+        //private int hk;
 
         public Car()
         {
@@ -36,6 +37,11 @@ namespace MiniProject2Server
         {
             get { return date; }
             set { date = value; }
+        } 
+        public string Color
+        {
+            get { return color; }
+            set { color = value; }
         }
 
         public string Type
@@ -44,5 +50,9 @@ namespace MiniProject2Server
             set { type = value; }
         }
 
+        public override string ToString()
+        {
+            return $"{type} {color} {price} {date}";
+        }
     }
 }

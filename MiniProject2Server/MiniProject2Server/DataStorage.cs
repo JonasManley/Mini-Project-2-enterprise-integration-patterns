@@ -11,6 +11,10 @@ namespace MiniProject2Server
         private List<Car> carList = new List<Car>()
         {
             new Car("Audi", "20/11/2019","red", 35000),
+            new Car("Audi", "20/11/2019","red", 45000),
+            new Car("Audi", "20/11/2019","blue", 15000),
+            new Car("Audi", "20/11/2019","black", 135000),
+            new Car("Audi", "20/11/2019","green", 75000),
             new Car("Audi", "24/11/2019","blue", 42000),
             new Car("Audi", "15/11/2019","yellow", 38000),
             new Car("Audi", "29/11/2019","black", 30000),

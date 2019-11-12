@@ -24,6 +24,13 @@ namespace MiniProject2Server
                   autoAck: false, consumer: consumer);
                 Console.WriteLine(" [x] Awaiting RPC requests");
 
+                //Variable used within the Received protocol. 
+                int caseSwitch = 1;
+                List<Car> availableCars = new List<Car>();
+                List<string> colorsFound = new List<string>();
+                List<Car> availableCarsByColor = new List<Car>();
+                bool found = false;
+
                 consumer.Received += (model, ea) =>
                 {
                     string response = null;
@@ -33,70 +40,117 @@ namespace MiniProject2Server
                     var replyProps = channel.CreateBasicProperties();
                     replyProps.CorrelationId = props.CorrelationId;
 
-                    try
+                    
+                    var message = Encoding.UTF8.GetString(body).ToString();
+                    Console.WriteLine(" [.] Message send from client", message);
+                    //write message down into a TXT log file (not made yet) 
+                   
+                    switch (caseSwitch)
                     {
-                        var message = Encoding.UTF8.GetString(body).ToString();
-                        Console.WriteLine(" [.] Message send from client", message);
-                        //write message down into a TXT log file (not made yet) 
+                        case 1:
+                            //Check avaliablity
+                            Console.WriteLine("Case 1 - Check avaliablity");
 
-                        //EIP - Splitter
-                        String[] messageArray = message.Split(' ');
-                        string carType = messageArray[0];
-                        string date = messageArray[1];
+                            //EIP - Splitter
+                            String[] messageArray = message.Split(' ');
+                            string carType = messageArray[0];
+                            string date = messageArray[1];
+                            //EIP - Splitter
 
-                        DataStorage dataStorage = new DataStorage();
-                        foreach (var car in dataStorage.CarList)
-                        {
-                            if (car.Type == carType && car.Date == date)
+                            DataStorage dataStorage = new DataStorage();
+                            foreach (var car in dataStorage.CarList)
+                            {
+                                if (car.Type == carType && car.Date == date)
+                                {
+                                    found = true;
+                                    availableCars.Add(car);
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                            if(found == true)
                             {
                                 response = "bil blev fundet";
                                 Console.WriteLine("bil blev fundet");
 
-                                var responseBytes1 = Encoding.UTF8.GetBytes(response);
+                                var responseBytes = Encoding.UTF8.GetBytes(response);
                                 channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
-                                  basicProperties: replyProps, body: responseBytes1);
+                                  basicProperties: replyProps, body: responseBytes);
                                 channel.BasicAck(deliveryTag: ea.DeliveryTag,
                                   multiple: false);
 
+                                caseSwitch += 1;
                             }
-                         }
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(" [.] " + e.Message);
-                        response = "";
-                    }
-                    finally 
-                    {
-                        response = "Error occurred";
-                        Console.WriteLine("Error occurred");
+                            else
+                            {
+                                response = "bil blev ikke fundet";
+                                Console.WriteLine("bil blev ikke fundet");
 
-                        var responseBytes1 = Encoding.UTF8.GetBytes(response);
-                        channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
-                          basicProperties: replyProps, body: responseBytes1);
-                        channel.BasicAck(deliveryTag: ea.DeliveryTag,
-                          multiple: false);
+                                var responseBytes = Encoding.UTF8.GetBytes(response);
+                                channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
+                                  basicProperties: replyProps, body: responseBytes);
+                                channel.BasicAck(deliveryTag: ea.DeliveryTag,
+                                  multiple: false);
+                            }
+                            break;
+                        case 2:
+                            Console.WriteLine("case 2 - choose color");
+                            //Choose color 
+                            foreach (var car in availableCars)
+                            {
+                                if (colorsFound.Contains(car.Color))
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    colorsFound.Add(car.Color);
+                                }
+                            }
+
+                            foreach (var color in colorsFound)
+                            {
+                                response = response + " " + color;
+                            }
+
+                            var responseBytesCase2 = Encoding.UTF8.GetBytes(response);
+                            channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
+                              basicProperties: replyProps, body: responseBytesCase2);
+                            channel.BasicAck(deliveryTag: ea.DeliveryTag,
+                              multiple: false);
+                            caseSwitch += 1;
+                            break;
+                        case 3:
+                            foreach (var car in availableCars)
+                            {
+                                if(car.Color == message)
+                                {
+                                    availableCarsByColor.Add(car);
+                                }
+                            }
+                            foreach (var car in availableCarsByColor)
+                            {
+                                response = response + " " + car.ToString();
+                            }
+
+                            var responseBytesCase3 = Encoding.UTF8.GetBytes(response);
+                            channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
+                              basicProperties: replyProps, body: responseBytesCase3);
+                            channel.BasicAck(deliveryTag: ea.DeliveryTag,
+                              multiple: false);
+                            caseSwitch += 1;
+                            break;
+                        default:
+                            Console.WriteLine("Default case");
+                            break;
                     }
                 };
 
                 Console.WriteLine(" Press [enter] to exit.");
                 Console.ReadLine();
             }
-        }
-
-        /// Assumes only valid positive integer input.
-        /// Don't expect this one to work for big numbers, and it's
-        /// probably the slowest recursive implementation possible.
-        /// 
-        private static int fib(int n)
-        {
-            if (n == 0 || n == 1)
-            {
-                return n;
-            }
-
-            return fib(n - 1) + fib(n - 2);
-
         }
     }
 }
