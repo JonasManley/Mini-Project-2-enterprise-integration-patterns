@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
+    <Compile Include="DataStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receive.cs" />
   </ItemGroup>

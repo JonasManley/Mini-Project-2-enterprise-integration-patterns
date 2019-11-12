@@ -9,7 +9,7 @@ namespace MiniProject2Server
     class Car
     {
         private string type;
-        private DateTime date;
+        private string date;
         private string color;
         private int price;
 
@@ -18,7 +18,7 @@ namespace MiniProject2Server
 
         }
 
-        public Car(string type, DateTime date, string color, int price)
+        public Car(string type, string date, string color, int price)
         {
             this.type = type;
             this.date = date;
@@ -32,7 +32,7 @@ namespace MiniProject2Server
             set { price = value; }
         }
 
-        public DateTime Date
+        public string Date
         {
             get { return date; }
             set { date = value; }

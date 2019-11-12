@@ -16,48 +16,87 @@ namespace MiniProject2Server
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.QueueDeclare(queue: "CarRental1",
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
-
+                channel.QueueDeclare(queue: "rpc_queue", durable: false,
+                  exclusive: false, autoDelete: false, arguments: null);
+                channel.BasicQos(0, 1, false);
                 var consumer = new EventingBasicConsumer(channel);
+                channel.BasicConsume(queue: "rpc_queue",
+                  autoAck: false, consumer: consumer);
+                Console.WriteLine(" [x] Awaiting RPC requests");
+
                 consumer.Received += (model, ea) =>
                 {
+                    string response = null;
+
                     var body = ea.Body;
-                    var message = Encoding.UTF8.GetString(body);
-                    Console.WriteLine(" [x] Received {0}", message);  //"toyota 22/07/1996"
+                    var props = ea.BasicProperties;
+                    var replyProps = channel.CreateBasicProperties();
+                    replyProps.CorrelationId = props.CorrelationId;
 
-                    //EIP - Splitter
-                    String[] messageArray = message.Split(' ');
-                    string carType = messageArray[0];
-                    DateTime dateNotDateTime = DateTime.ParseExact(messageArray[1], "dd/MM/yyyy", null);
-                    Console.WriteLine("test af datetime " + dateNotDateTime);
-
-                    DataStorage dataStorage = new DataStorage();
-                    foreach (var car in dataStorage.CarList)
+                    try
                     {
-                        if()
+                        var message = Encoding.UTF8.GetString(body).ToString();
+                        Console.WriteLine(" [.] Message send from client", message);
+                        //write message down into a TXT log file (not made yet) 
+
+                        //EIP - Splitter
+                        String[] messageArray = message.Split(' ');
+                        string carType = messageArray[0];
+                        string date = messageArray[1];
+
+                        DataStorage dataStorage = new DataStorage();
+                        foreach (var car in dataStorage.CarList)
+                        {
+                            if (car.Type == carType && car.Date == date)
+                            {
+                                response = "bil blev fundet";
+                                Console.WriteLine("bil blev fundet");
+
+                                var responseBytes1 = Encoding.UTF8.GetBytes(response);
+                                channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
+                                  basicProperties: replyProps, body: responseBytes1);
+                                channel.BasicAck(deliveryTag: ea.DeliveryTag,
+                                  multiple: false);
+
+                            }
+                         }
                     }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(" [.] " + e.Message);
+                        response = "";
+                    }
+                    finally 
+                    {
+                        response = "Error occurred";
+                        Console.WriteLine("Error occurred");
 
-                    string response = "dasdfas";
-
-                    var responseBytes = Encoding.UTF8.GetBytes(response);
-                    channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
-                      basicProperties: replyProps, body: responseBytes);
-                    channel.BasicAck(deliveryTag: ea.DeliveryTag,
-                      multiple: false);
-
-
+                        var responseBytes1 = Encoding.UTF8.GetBytes(response);
+                        channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
+                          basicProperties: replyProps, body: responseBytes1);
+                        channel.BasicAck(deliveryTag: ea.DeliveryTag,
+                          multiple: false);
+                    }
                 };
-                channel.BasicConsume(queue: "CarRental",
-                                     autoAck: true,
-                                     consumer: consumer);
 
                 Console.WriteLine(" Press [enter] to exit.");
                 Console.ReadLine();
             }
+        }
+
+        /// Assumes only valid positive integer input.
+        /// Don't expect this one to work for big numbers, and it's
+        /// probably the slowest recursive implementation possible.
+        /// 
+        private static int fib(int n)
+        {
+            if (n == 0 || n == 1)
+            {
+                return n;
+            }
+
+            return fib(n - 1) + fib(n - 2);
+
         }
     }
 }
