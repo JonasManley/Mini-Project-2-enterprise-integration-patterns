@@ -16,7 +16,7 @@ namespace MiniProject2Server
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.QueueDeclare(queue: "hello",
+                channel.QueueDeclare(queue: "CarRental1",
                                      durable: false,
                                      exclusive: false,
                                      autoDelete: false,
@@ -27,9 +27,23 @@ namespace MiniProject2Server
                 {
                     var body = ea.Body;
                     var message = Encoding.UTF8.GetString(body);
-                    Console.WriteLine(" [x] Received {0}", message);
+                    Console.WriteLine(" [x] Received {0}", message);  //"toyota 22/07/1996"
+
+                    //EIP - Splitter
+                    String[] messageArray = message.Split(' ');
+                    string carType = messageArray[0];
+                    DateTime dateNotDateTime = DateTime.ParseExact(messageArray[1], "dd/MM/yyyy", null);
+                    Console.WriteLine("test af datetime " + dateNotDateTime);
+
+
+
+                    //
+                    //
+                    //
+
+
                 };
-                channel.BasicConsume(queue: "hello",
+                channel.BasicConsume(queue: "CarRental",
                                      autoAck: true,
                                      consumer: consumer);
 

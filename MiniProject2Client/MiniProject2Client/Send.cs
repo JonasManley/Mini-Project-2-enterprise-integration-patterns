@@ -15,17 +15,19 @@ namespace MiniProject2Client
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.QueueDeclare(queue: "hello",
+                channel.QueueDeclare(queue: "CarRental",
                                      durable: false,
                                      exclusive: false,
                                      autoDelete: false,
                                      arguments: null);
 
-                string message = "Hello World!";
-                var body = Encoding.UTF8.GetBytes(message);
+                Console.WriteLine("please type in the desicred car type with a date after: Audi 22/06/1996");
+                string message = Console.ReadLine();
+                var body = Encoding.UTF8.GetBytes(message);  //made to bytes
+
 
                 channel.BasicPublish(exchange: "",
-                                     routingKey: "hello",
+                                     routingKey: "CarRental",
                                      basicProperties: null,
                                      body: body);
                 Console.WriteLine(" [x] Sent {0}", message);
