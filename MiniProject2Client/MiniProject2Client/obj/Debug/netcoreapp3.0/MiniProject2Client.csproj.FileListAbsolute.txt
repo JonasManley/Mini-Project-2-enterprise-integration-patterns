@@ -1,4 +1,0 @@
-C:\Users\Bruger\source\repos\MiniProject2Client\MiniProject2Client\bin\Debug\netcoreapp3.0\MiniProject2Client.exe
-C:\Users\Bruger\source\repos\MiniProject2Client\MiniProject2Client\obj\Debug\netcoreapp3.0\MiniProject2Client.csprojAssemblyReference.cache
-C:\Users\Bruger\source\repos\MiniProject2Client\MiniProject2Client\obj\Debug\netcoreapp3.0\MiniProject2Client.AssemblyInfoInputs.cache
-C:\Users\Bruger\source\repos\MiniProject2Client\MiniProject2Client\obj\Debug\netcoreapp3.0\MiniProject2Client.AssemblyInfo.cs

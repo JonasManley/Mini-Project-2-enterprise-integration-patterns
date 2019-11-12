@@ -1,0 +1,12 @@
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\bin\Debug\MiniProject2Server.exe.config
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\bin\Debug\MiniProject2Server.exe
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\bin\Debug\MiniProject2Server.pdb
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\bin\Debug\RabbitMQ.Client.dll
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\bin\Debug\RabbitMQ.Client.xml
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\obj\Debug\MiniProject2Server.csprojAssemblyReference.cache
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\obj\Debug\MiniProject2Server.csproj.CoreCompileInputs.cache
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\obj\Debug\MiniProject2Server.csproj.CopyComplete
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\obj\Debug\MiniProject2Server.exe
+C:\Users\Bruger\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\obj\Debug\MiniProject2Server.pdb
