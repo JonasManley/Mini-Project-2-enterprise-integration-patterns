@@ -35,11 +35,19 @@ namespace MiniProject2Server
                     DateTime dateNotDateTime = DateTime.ParseExact(messageArray[1], "dd/MM/yyyy", null);
                     Console.WriteLine("test af datetime " + dateNotDateTime);
 
+                    DataStorage dataStorage = new DataStorage();
+                    foreach (var car in dataStorage.CarList)
+                    {
+                        if()
+                    }
 
+                    string response = "dasdfas";
 
-                    //
-                    //
-                    //
+                    var responseBytes = Encoding.UTF8.GetBytes(response);
+                    channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
+                      basicProperties: replyProps, body: responseBytes);
+                    channel.BasicAck(deliveryTag: ea.DeliveryTag,
+                      multiple: false);
 
 
                 };

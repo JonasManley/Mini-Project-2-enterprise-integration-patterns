@@ -9,6 +9,14 @@ namespace MiniProject2Client
 {
     class Send
     {
+        private readonly IConnection connection;
+        private readonly IModel channel;
+        private readonly string replyQueueName;
+        private readonly EventingBasicConsumer consumer;
+        private readonly BlockingCollection<string> respQueue = new BlockingCollection<string>();
+        private readonly IBasicProperties props;
+
+
         public static void Main()
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
@@ -28,7 +36,7 @@ namespace MiniProject2Client
 
                 channel.BasicPublish(exchange: "",
                                      routingKey: "CarRental",
-                                     basicProperties: null,
+                                     basicProperties: props,
                                      body: body);
                 Console.WriteLine(" [x] Sent {0}", message);
             }
