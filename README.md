@@ -19,18 +19,18 @@ Software needed for running this project
 - Start RabbitMQ
 - Run Server and the Client afterwards
 	
-### BPMN
+## BPMN
 	- Take a look at our BPMN model to understand the functionality of our program.
 	
-### Intergration Patterns we cover
+## Intergration Patterns we cover
 
-#### Message Channel
+### Message Channel
 ![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageChannelSolution.gif)
-#### Message
+### Message
 ![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageSolution.gif)
-#### Splitter
+### Splitter
 ![Request Reply](https://www.enterpriseintegrationpatterns.com/img/Sequencer.gif)
-#### Aggregator
+### Aggregator
 ![Request Reply](https://www.enterpriseintegrationpatterns.com/img/Aggregator.gif)
-#### Request-Reply
+### Request-Reply
 ![Request Reply](https://www.enterpriseintegrationpatterns.com/img/RequestReply.gif)
