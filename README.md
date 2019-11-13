@@ -22,6 +22,10 @@ Software needed for running this project
 	
 ## BPMN
 **Take a look at our BPMN model to understand the functionality of our program.**
+	- As you see on the diagram, we have a **client** and a **server**. The first thing which happen is that the client sends a type 	 and date for a car which they want to rent. Then the server recieve the request and checks for availability, based on want it 		finds a message will be sent back to the client. 
+	1: if the server couldt find any cars, the client is asked to try another date or type.
+	2: if the server finds any cars which matches the conditions, the color of the cars are then returned to client.
+	3:
 ![BPMN model](BPMN/BPMNModel.JPG)	
 	
 ## Intergration Patterns we cover
