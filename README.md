@@ -11,17 +11,12 @@
 	- Take a look at our BPMN model to understand the functionality of our program.
 	
 ## Intergration Patterns we cover
-	- Message Channel
-	![alt text](http://url/to/img.png)
+	Message Channel
 	
-	- Message
-	![alt text](http://url/to/img.png)
+	Message
 	
-	- Splitter
-	![alt text](http://url/to/img.png)
+	Splitter
+	Aggregator
 	
-	- Aggregator
-	![alt text](http://url/to/img.png)
-	
-	- Request-Reply
-	![Request Reply](Patterns/RequestReply.png)
+	Request-Reply
+![Request Reply](Patterns/RequestReply.png)
