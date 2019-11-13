@@ -11,12 +11,10 @@
 	- Take a look at our BPMN model to understand the functionality of our program.
 	
 ## Intergration Patterns we cover
-	Message Channel
-	
-	Message
-	
-	Splitter
-	Aggregator
-	
-	Request-Reply
+
+- Message Channel	
+- Message	
+- Splitter
+- Aggregator
+- Request-Reply
 ![Request Reply](Patterns/RequestReply.png)
