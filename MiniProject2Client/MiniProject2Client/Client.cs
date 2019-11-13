@@ -42,14 +42,18 @@ namespace MiniProject2Client
             };
         }
 
+
+        //EIP - Request & Reply ----------------------------------------
         public string Call(string message)
         {
+            //EIP  "Message" -----------------------------
             var messageBytes = Encoding.UTF8.GetBytes(message);
+            //EIP  "Message" -----------------------------
             channel.BasicPublish(
                 exchange: "",
-                routingKey: "rpc_queue",
-                basicProperties: props,
-                body: messageBytes);
+                routingKey: "rpc_queue",    //Identifyer for the queue
+                basicProperties: props,     //expecting response
+                body: messageBytes);        //The message  
 
             channel.BasicConsume(
                 consumer: consumer,
@@ -58,6 +62,8 @@ namespace MiniProject2Client
 
             return respQueue.Take();
         }
+        //EIP - Request & Reply ----------------------------------------
+
 
         public void Close()
         {

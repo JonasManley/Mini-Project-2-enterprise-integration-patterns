@@ -21,7 +21,7 @@ namespace MiniProject2Server
 
         public static void Main()
         {
-            //EIP Channel created on localhost with help of MqRabbit. 
+            //EIP "Channel" created on localhost with help of MqRabbit ref.. 
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
@@ -71,11 +71,12 @@ namespace MiniProject2Server
                             string statusTest1 = "Case 1 - Check avaliablity";
                             File.AppendAllText(logPath, TimeStampForLog(statusTest1, message));
 
-                            //EIP - Splitter
+                            //EIP - Splitter  ---------------------------------------
+                            //Splitting the data so we can use it to search the list in DataStorage for availablity
                             String[] messageArray = message.Split(' ');
                             string carType = messageArray[0];
                             string date = messageArray[1];
-                            //EIP - Splitter
+                            //EIP - Splitter ---------------------------------------
 
                             DataStorage dataStorage = new DataStorage();
                             foreach (var car in dataStorage.CarList)
@@ -96,11 +97,18 @@ namespace MiniProject2Server
                                 Console.WriteLine("bil blev fundet");
                                 File.AppendAllText(logPath, TimeStampForLog(statusTest1, response));
 
+                                //EIP - Request & Reply ------------------------------------
+                                //New message created -----------------
                                 var responseBytes = Encoding.UTF8.GetBytes(response);
+                                //New message created -----------------
+
+                                //Send a response back ---------------
                                 channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
                                   basicProperties: replyProps, body: responseBytes);
                                 channel.BasicAck(deliveryTag: ea.DeliveryTag,
                                   multiple: false);
+                                //Send a response back ---------------
+                                //EIP - Request & Reply ------------------------------------
 
                                 caseSwitch += 1;
                             }
@@ -235,9 +243,13 @@ namespace MiniProject2Server
                             Booking booking = new Booking(driver, selectedCar, DateTime.Now);
 
 
-                            //Aggregater 
-                            response =  message1 + message2 + message3;
-                            File.AppendAllText(logPath, TimeStampForLog(statusTest5, response));
+                            //EIP - Aggregator  ------------------------------------------
+                            if(message1 != string.Empty && message2 != string.Empty && message3 != string.Empty)
+                            {
+                                response = message1 + message2 + message3;
+                                File.AppendAllText(logPath, TimeStampForLog(statusTest5, response));
+                            }
+                            //EIP - Aggregator  ------------------------------------------
 
                             //Saves informations in a TXT file (illustrate database) 
                             File.WriteAllText(@"C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\CompletedRentals.txt", response);
