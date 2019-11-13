@@ -15,7 +15,8 @@ Software needed for running this project
 ### Setup Instructions
 - Download this repository
 - Open both the client and server with Visual studio 2019
-- Change file paths to the direction your project is installed
+- Change file paths to the direction your project is installed (There are 2 paths to adjust, both located in Receive.cs)
+	- Mini-Project-2-enterprise-integration-patterns -> MiniProject2Server -> Receive.cs
 - Start RabbitMQ
 - Run Server and the Client afterwards
 	
