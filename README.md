@@ -21,7 +21,7 @@ Software needed for running this project
 	
 ## BPMN
 Take a look at our BPMN model to understand the functionality of our program.
-![BPMN model](BPMN/NewBPMN.JPG)	
+![BPMN model](BPMN/BPMNModel.JPG)	
 	
 ## Intergration Patterns we cover
 
