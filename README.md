@@ -15,10 +15,10 @@
 ### Message Channel
 ![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageChannelSolution.gif)
 ### Message
-![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageChannelSolution.gif)
+![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageSolution.gif)
 ### Splitter
-![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageChannelSolution.gif)
+![Request Reply](https://www.enterpriseintegrationpatterns.com/img/Sequencer.gif)
 ### Aggregator
-![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageChannelSolution.gif)
+![Request Reply](https://www.enterpriseintegrationpatterns.com/img/Aggregator.gif)
 ### Request-Reply
-![Request Reply](Patterns/RequestReply.png)
+![Request Reply](https://www.enterpriseintegrationpatterns.com/img/RequestReply.gif)
