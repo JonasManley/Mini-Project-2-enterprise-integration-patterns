@@ -24,4 +24,4 @@
 	![alt text](http://url/to/img.png)
 	
 	- Request-Reply
-	![alt text](https://github.com/JonasManley/Mini-Project-2-enterprise-integration-patterns/blob/master/Patterns/RequestReply.png)
+	![alt text](Patterns/RequestReply.png)
