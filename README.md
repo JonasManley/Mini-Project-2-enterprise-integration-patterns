@@ -12,31 +12,12 @@ Software needed for running this project
 - Install RabbitMQ (https://www.rabbitmq.com/download.html)
 - Install Visual studio 2019 (https://visualstudio.microsoft.com/downloads/)
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Setup Instructions
-Install RabbitMQ (https://www.rabbitmq.com/download.html)
-	- Download this repository
-		- Open both the client and server with Visual studio 2019
-			- Change file paths to the direction your project is installed
-	- Start RabbitMQ
-	- Run Server and the Client afterwards
+- Download this repository
+- Open both the client and server with Visual studio 2019
+- Change file paths to the direction your project is installed
+- Start RabbitMQ
+- Run Server and the Client afterwards
 	
 ## BPMN
 	- Take a look at our BPMN model to understand the functionality of our program.
