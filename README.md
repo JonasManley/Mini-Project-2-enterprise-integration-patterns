@@ -20,7 +20,8 @@ Software needed for running this project
 - Run Server and the Client afterwards
 	
 ## BPMN
-	- Take a look at our BPMN model to understand the functionality of our program.
+Take a look at our BPMN model to understand the functionality of our program.
+![BPMN model](BPMN/New BPMN.JPG)	
 	
 ## Intergration Patterns we cover
 
