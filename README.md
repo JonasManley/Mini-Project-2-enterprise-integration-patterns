@@ -12,7 +12,8 @@
 	
 ## Intergration Patterns we cover
 
-- Message Channel	
+- Message Channel
+![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageChannelSolution.gif)
 - Message	
 - Splitter
 - Aggregator
