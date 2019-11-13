@@ -20,7 +20,7 @@ Software needed for running this project
 - Start RabbitMQ
 - Run Server and the Client afterwards
 	
-## BPMN
+## BPMN (Business Procedure)
 **Take a look at our BPMN model to understand the functionality of our program.**
 As you see on our BPMN model we have 3 layers **Application A**, **Application B**, **Database**, the idea is that the Client _(App A)_ is asked alot of questions regarding details of a car, which is send and handled by the server _(App B)_ and at the end the result is that the client has made a booking which is stored in a file.
 
