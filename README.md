@@ -1,10 +1,10 @@
 # Mini-Project-2-enterprise-integration-patterns
 
-One Paragraph of project description goes here
+The main objective of this project is to improve practical experience in implementing integrating enterprise applications by use of integration platforms and middleware.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 Software needed for running this project
