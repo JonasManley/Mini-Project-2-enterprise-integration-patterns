@@ -17,7 +17,7 @@ C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniP
 C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\bin\Debug\RabbitMQ.Client.dll
 C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
 C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\bin\Debug\RabbitMQ.Client.xml
-C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\obj\Debug\MiniProject2Server.csprojAssemblyReference.cache
 C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\obj\Debug\MiniProject2Server.csproj.CopyComplete
 C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\obj\Debug\MiniProject2Server.exe
 C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\obj\Debug\MiniProject2Server.pdb
+C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\MiniProject2Server\MiniProject2Server\obj\Debug\MiniProject2Server.csprojAssemblyReference.cache

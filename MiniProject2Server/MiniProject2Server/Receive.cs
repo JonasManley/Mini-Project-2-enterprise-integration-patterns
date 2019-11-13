@@ -5,17 +5,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace MiniProject2Server
 {
     class Receive
-    {
+    { 
+        //Aggregation fields 
+        private static string message1;  // Type and Date
+        private static string message2;  // Color
+        private static string message3;  // Driver name and license  
+
         public static void Main()
         {
+            //EIP Channel created on localhost with help of MqRabbit. 
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
+                //Declaring of the que to send messages to. 
                 channel.QueueDeclare(queue: "rpc_queue", durable: false,
                   exclusive: false, autoDelete: false, arguments: null);
                 channel.BasicQos(0, 1, false);
@@ -29,8 +37,12 @@ namespace MiniProject2Server
                 List<Car> availableCars = new List<Car>();
                 List<string> colorsFound = new List<string>();
                 List<Car> availableCarsByColor = new List<Car>();
+                List<Car> chooseCarList = new List<Car>();
+                Car selectedCar = null;
                 bool found = false;
 
+
+                //Message recevied
                 consumer.Received += (model, ea) =>
                 {
                     string response = null;
@@ -43,11 +55,13 @@ namespace MiniProject2Server
                     
                     var message = Encoding.UTF8.GetString(body).ToString();
                     Console.WriteLine(" [.] Message send from client", message);
+
                     //write message down into a TXT log file (not made yet) 
-                   
+
                     switch (caseSwitch)
                     {
                         case 1:
+                            message1 = message;
                             //Check avaliablity
                             Console.WriteLine("Case 1 - Check avaliablity");
 
@@ -96,6 +110,7 @@ namespace MiniProject2Server
                             }
                             break;
                         case 2:
+                            message2 = message;
                             Console.WriteLine("case 2 - choose color");
                             //Choose color 
                             foreach (var car in availableCars)
@@ -114,15 +129,22 @@ namespace MiniProject2Server
                             {
                                 response = response + " " + color;
                             }
-
-                            var responseBytesCase2 = Encoding.UTF8.GetBytes(response);
-                            channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
-                              basicProperties: replyProps, body: responseBytesCase2);
-                            channel.BasicAck(deliveryTag: ea.DeliveryTag,
-                              multiple: false);
-                            caseSwitch += 1;
+                            if(response == string.Empty)
+                            {
+                                response = "Color not found, please try with another one or check spelling";
+                            }
+                            else
+                            {
+                                var responseBytesCase2 = Encoding.UTF8.GetBytes(response);
+                                channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
+                                  basicProperties: replyProps, body: responseBytesCase2);
+                                channel.BasicAck(deliveryTag: ea.DeliveryTag,
+                                  multiple: false);
+                                caseSwitch += 1;
+                            }
                             break;
                         case 3:
+                            Console.WriteLine("case 3 - choose car");
                             foreach (var car in availableCars)
                             {
                                 if(car.Color == message)
@@ -132,7 +154,9 @@ namespace MiniProject2Server
                             }
                             foreach (var car in availableCarsByColor)
                             {
-                                response = response + " " + car.ToString();
+                                response = response + car.ToString() + "-";
+                                
+                                chooseCarList.Add(car);
                             }
 
                             var responseBytesCase3 = Encoding.UTF8.GetBytes(response);
@@ -141,6 +165,47 @@ namespace MiniProject2Server
                             channel.BasicAck(deliveryTag: ea.DeliveryTag,
                               multiple: false);
                             caseSwitch += 1;
+                            break;
+                        case 4:
+                            Console.WriteLine("case 4 - selecet car");
+                            int index = Convert.ToInt32(message)-1;
+                            if(index < 0 || availableCarsByColor.Count < index+1 )
+                            {
+                                response = "The number is not valid, try with a differnt one";
+                            }
+                            else
+                            {
+                                selectedCar = chooseCarList[index];
+                                response = "selected CAR: " + selectedCar.ToString();
+                            }
+                            
+                            var responseBytesCase4 = Encoding.UTF8.GetBytes(response);
+                            channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
+                              basicProperties: replyProps, body: responseBytesCase4);
+                            channel.BasicAck(deliveryTag: ea.DeliveryTag,
+                              multiple: false);
+                            caseSwitch += 1;
+                            break;
+                        case 5:
+                            message3 = message;
+                            string[] nameAndLicense = message.Split(' ');
+                            string name = nameAndLicense[0];
+                            string license = nameAndLicense[1];
+                            Driver driver = new Driver(name, license);
+                            Booking booking = new Booking(driver, selectedCar, DateTime.Now);
+
+                            //Aggregater 
+                            response =  message1 + message2 + message3;
+
+                            //Person information and create booking and save to DB
+
+                            var responseBytesCase5 = Encoding.UTF8.GetBytes(response);
+                            channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
+                              basicProperties: replyProps, body: responseBytesCase5);
+                            channel.BasicAck(deliveryTag: ea.DeliveryTag,
+                              multiple: false);
+
+                            
                             break;
                         default:
                             Console.WriteLine("Default case");

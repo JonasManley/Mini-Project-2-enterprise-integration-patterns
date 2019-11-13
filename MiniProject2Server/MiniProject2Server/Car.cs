@@ -52,7 +52,7 @@ namespace MiniProject2Server
 
         public override string ToString()
         {
-            return $"{type} {color} {price} {date}";
+            return $"{type} {color} {price} {date} ";
         }
     }
 }

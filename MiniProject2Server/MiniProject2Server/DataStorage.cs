@@ -43,10 +43,9 @@ namespace MiniProject2Server
             new Car("Fiat", "26/11/2019","gray", 9000),
             new Car("Fiat", "22/11/2019","blue", 6000)
         };
-
         public List<Car> CarList
         {
             get { return carList; }
-        }
+        }        
     }
 }
