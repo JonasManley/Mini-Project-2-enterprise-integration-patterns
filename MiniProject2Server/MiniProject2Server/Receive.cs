@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using System.IO;
 
 namespace MiniProject2Server
 {
@@ -15,6 +16,8 @@ namespace MiniProject2Server
         private static string message1;  // Type and Date
         private static string message2;  // Color
         private static string message3;  // Driver name and license  
+        private static string logPath = @"C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\Log.txt";
+
 
         public static void Main()
         {
@@ -56,6 +59,7 @@ namespace MiniProject2Server
                     var message = Encoding.UTF8.GetString(body).ToString();
                     Console.WriteLine(" [.] Message send from client", message);
 
+                    File.AppendAllText(logPath, TimeStampForLog(message));
                     //write message down into a TXT log file (not made yet) 
 
                     switch (caseSwitch)
@@ -194,10 +198,12 @@ namespace MiniProject2Server
                             Driver driver = new Driver(name, license);
                             Booking booking = new Booking(driver, selectedCar, DateTime.Now);
 
+
                             //Aggregater 
                             response =  message1 + message2 + message3;
 
-                            //Person information and create booking and save to DB
+                            //Saves informations in a TXT file (illustrate database) 
+                            File.WriteAllText(@"C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\CompletedRentals.txt", response);
 
                             var responseBytesCase5 = Encoding.UTF8.GetBytes(response);
                             channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
@@ -216,6 +222,12 @@ namespace MiniProject2Server
                 Console.WriteLine(" Press [enter] to exit.");
                 Console.ReadLine();
             }
+        }
+
+        private static string TimeStampForLog(string message)
+        {
+            string response = DateTime.Now + " " + message + Environment.NewLine; ;
+            return response;
         }
     }
 }
