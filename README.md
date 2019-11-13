@@ -24,4 +24,4 @@
 	![alt text](http://url/to/img.png)
 	
 	- Request-Reply
-	![alt text](Patterns/RequestReply.PNG)
+	![Request Reply](Patterns/RequestReply.PNG)
