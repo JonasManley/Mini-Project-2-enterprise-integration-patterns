@@ -12,10 +12,13 @@
 	
 ## Intergration Patterns we cover
 
-- Message Channel
+### Message Channel
 ![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageChannelSolution.gif)
-- Message	
-- Splitter
-- Aggregator
-- Request-Reply
+### Message
+![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageChannelSolution.gif)
+### Splitter
+![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageChannelSolution.gif)
+### Aggregator
+![Request Reply](https://www.enterpriseintegrationpatterns.com/img/MessageChannelSolution.gif)
+### Request-Reply
 ![Request Reply](Patterns/RequestReply.png)
