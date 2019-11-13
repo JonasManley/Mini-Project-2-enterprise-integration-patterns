@@ -1,3 +1,2 @@
-Audi 20/11/2019 Jonas Pedersen 225124312312
-Audi 20/11/2019 Christoffer dunk 87561236178
-Fiat 22/11/2019 Valdemar Eriksen 6124125612412
+Created: 13/11/2019 21:47:42 --  Rented Fiat 22/11/2019 Jonas Pedersen 251241251923
+Created: 13/11/2019 21:49:12 --  Rented by: Audi 20/11/2019 Christoffer Dunk 2614123125412

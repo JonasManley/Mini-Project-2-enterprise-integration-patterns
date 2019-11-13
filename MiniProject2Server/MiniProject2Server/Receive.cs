@@ -252,7 +252,7 @@ namespace MiniProject2Server
                             //EIP - Aggregator  ------------------------------------------
 
                             //Saves informations in a TXT file (illustrate database) 
-                            File.AppendAllText(@"C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\CompletedRentals.txt", response + Environment.NewLine);
+                            File.AppendAllText(@"C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\CompletedRentals.txt", CompletePost(response));
 
                             var responseBytesCase5 = Encoding.UTF8.GetBytes(response);
                             channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
@@ -276,6 +276,11 @@ namespace MiniProject2Server
         private static string TimeStampForLog(string casestatus, string message)
         {
             string response = DateTime.Now + " " + casestatus + ": " + message + Environment.NewLine; ;
+            return response;
+        }
+        private static string CompletePost(string information)
+        {
+            string response = "Created: " + DateTime.Now + " --  Rented by: " + information + Environment.NewLine; ;
             return response;
         }
     }

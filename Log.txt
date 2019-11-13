@@ -114,3 +114,35 @@
 13/11/2019 21:44:07  : Valdemar Eriksen 6124125612412
 13/11/2019 21:44:07 case 5 - create booking: Valdemar Eriksen 6124125612412
 13/11/2019 21:44:07 case 5 - create booking: Fiat 22/11/2019 Valdemar Eriksen 6124125612412
+13/11/2019 21:47:29  : Fiat 22/11/2019
+13/11/2019 21:47:29 Case 1 - Check avaliablity: Fiat 22/11/2019
+13/11/2019 21:47:29 Case 1 - Check avaliablity: bil blev fundet
+13/11/2019 21:47:29  :  
+13/11/2019 21:47:29 case 2 - choose color:  
+13/11/2019 21:47:29 case 2 - choose color:  blue
+13/11/2019 21:47:31  : blue
+13/11/2019 21:47:31 case 3 - choose car: blue
+13/11/2019 21:47:31 case 3 - choose car: Fiat blue 6000 22/11/2019 -
+13/11/2019 21:47:34  : 1
+13/11/2019 21:47:34 case 4 - selecet car: 1
+13/11/2019 21:47:34 case 4 - selecet car: selected CAR: Fiat blue 6000 22/11/2019 
+13/11/2019 21:47:34 case 4 - selecet car: 1
+13/11/2019 21:47:42  : Jonas Pedersen 251241251923
+13/11/2019 21:47:42 case 5 - create booking: Jonas Pedersen 251241251923
+13/11/2019 21:47:42 case 5 - create booking: Fiat 22/11/2019 Jonas Pedersen 251241251923
+13/11/2019 21:48:58  : Audi 20/11/2019
+13/11/2019 21:48:58 Case 1 - Check avaliablity: Audi 20/11/2019
+13/11/2019 21:48:58 Case 1 - Check avaliablity: bil blev fundet
+13/11/2019 21:48:58  :  
+13/11/2019 21:48:58 case 2 - choose color:  
+13/11/2019 21:48:58 case 2 - choose color:  red blue black green
+13/11/2019 21:49:00  : red
+13/11/2019 21:49:00 case 3 - choose car: red
+13/11/2019 21:49:00 case 3 - choose car: Audi red 35000 20/11/2019 -Audi red 45000 20/11/2019 -
+13/11/2019 21:49:01  : 2
+13/11/2019 21:49:01 case 4 - selecet car: 2
+13/11/2019 21:49:01 case 4 - selecet car: selected CAR: Audi red 45000 20/11/2019 
+13/11/2019 21:49:01 case 4 - selecet car: 2
+13/11/2019 21:49:11  : Christoffer Dunk 2614123125412
+13/11/2019 21:49:11 case 5 - create booking: Christoffer Dunk 2614123125412
+13/11/2019 21:49:11 case 5 - create booking: Audi 20/11/2019 Christoffer Dunk 2614123125412
