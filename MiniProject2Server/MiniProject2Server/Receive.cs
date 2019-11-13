@@ -59,15 +59,17 @@ namespace MiniProject2Server
                     var message = Encoding.UTF8.GetString(body).ToString();
                     Console.WriteLine(" [.] Message send from client", message);
 
-                    File.AppendAllText(logPath, TimeStampForLog(message));
+                    File.AppendAllText(logPath, TimeStampForLog(" ", message));
                     //write message down into a TXT log file (not made yet) 
 
                     switch (caseSwitch)
                     {
+                        //Check avaliablity
                         case 1:
-                            message1 = message;
-                            //Check avaliablity
                             Console.WriteLine("Case 1 - Check avaliablity");
+                            message1 = message;
+                            string statusTest1 = "Case 1 - Check avaliablity";
+                            File.AppendAllText(logPath, TimeStampForLog(statusTest1, message));
 
                             //EIP - Splitter
                             String[] messageArray = message.Split(' ');
@@ -92,6 +94,7 @@ namespace MiniProject2Server
                             {
                                 response = "bil blev fundet";
                                 Console.WriteLine("bil blev fundet");
+                                File.AppendAllText(logPath, TimeStampForLog(statusTest1, response));
 
                                 var responseBytes = Encoding.UTF8.GetBytes(response);
                                 channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
@@ -105,6 +108,7 @@ namespace MiniProject2Server
                             {
                                 response = "bil blev ikke fundet";
                                 Console.WriteLine("bil blev ikke fundet");
+                                File.AppendAllText(logPath, TimeStampForLog(statusTest1, response));
 
                                 var responseBytes = Encoding.UTF8.GetBytes(response);
                                 channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
@@ -113,10 +117,13 @@ namespace MiniProject2Server
                                   multiple: false);
                             }
                             break;
+                        //Choose color 
                         case 2:
-                            message2 = message;
                             Console.WriteLine("case 2 - choose color");
-                            //Choose color 
+                            message2 = message;
+                            string statusTest2 = "case 2 - choose color";
+                            File.AppendAllText(logPath, TimeStampForLog(statusTest2, message));
+                            
                             foreach (var car in availableCars)
                             {
                                 if (colorsFound.Contains(car.Color))
@@ -136,9 +143,11 @@ namespace MiniProject2Server
                             if(response == string.Empty)
                             {
                                 response = "Color not found, please try with another one or check spelling";
+                                File.AppendAllText(logPath, TimeStampForLog(statusTest2, response));
                             }
                             else
                             {
+                                File.AppendAllText(logPath, TimeStampForLog(statusTest2, response));
                                 var responseBytesCase2 = Encoding.UTF8.GetBytes(response);
                                 channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
                                   basicProperties: replyProps, body: responseBytesCase2);
@@ -149,6 +158,8 @@ namespace MiniProject2Server
                             break;
                         case 3:
                             Console.WriteLine("case 3 - choose car");
+                            string statusTest3 = "case 3 - choose car";
+                            File.AppendAllText(logPath, TimeStampForLog(statusTest3, message));
                             foreach (var car in availableCars)
                             {
                                 if(car.Color == message)
@@ -162,6 +173,11 @@ namespace MiniProject2Server
                                 
                                 chooseCarList.Add(car);
                             }
+                            if(message == string.Empty)
+                            {
+
+                            }
+                            File.AppendAllText(logPath, TimeStampForLog(statusTest3, response));
 
                             var responseBytesCase3 = Encoding.UTF8.GetBytes(response);
                             channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
@@ -171,18 +187,23 @@ namespace MiniProject2Server
                             caseSwitch += 1;
                             break;
                         case 4:
-                            Console.WriteLine("case 4 - selecet car");
+                            string statusTest4 = "case 4 - selecet car";
+                            Console.WriteLine(statusTest4);
+                            File.AppendAllText(logPath, TimeStampForLog(statusTest4, message));
                             int index = Convert.ToInt32(message)-1;
-                            if(index < 0 || availableCarsByColor.Count < index+1 )
+                            if (index < 0 || availableCarsByColor.Count < index + 1)
                             {
                                 response = "The number is not valid, try with a differnt one";
+                                File.AppendAllText(logPath, TimeStampForLog(statusTest4, response));
                             }
                             else
                             {
                                 selectedCar = chooseCarList[index];
                                 response = "selected CAR: " + selectedCar.ToString();
+                                File.AppendAllText(logPath, TimeStampForLog(statusTest4, response));
                             }
-                            
+
+                            File.AppendAllText(logPath, TimeStampForLog(statusTest4, message));
                             var responseBytesCase4 = Encoding.UTF8.GetBytes(response);
                             channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
                               basicProperties: replyProps, body: responseBytesCase4);
@@ -191,6 +212,10 @@ namespace MiniProject2Server
                             caseSwitch += 1;
                             break;
                         case 5:
+                            string statusTest5 = "case 5 - create booking";
+                            Console.WriteLine(statusTest5);
+                            File.AppendAllText(logPath, TimeStampForLog(statusTest5, message));
+
                             message3 = message;
                             string[] nameAndLicense = message.Split(' ');
                             string name = nameAndLicense[0];
@@ -201,6 +226,7 @@ namespace MiniProject2Server
 
                             //Aggregater 
                             response =  message1 + message2 + message3;
+                            File.AppendAllText(logPath, TimeStampForLog(statusTest5, response));
 
                             //Saves informations in a TXT file (illustrate database) 
                             File.WriteAllText(@"C:\Users\Jonas\source\repos\Mini-Project-2-enterprise-integration-patterns\CompletedRentals.txt", response);
@@ -224,9 +250,9 @@ namespace MiniProject2Server
             }
         }
 
-        private static string TimeStampForLog(string message)
+        private static string TimeStampForLog(string casestatus, string message)
         {
-            string response = DateTime.Now + " " + message + Environment.NewLine; ;
+            string response = DateTime.Now + " " + casestatus + ": " + message + Environment.NewLine; ;
             return response;
         }
     }

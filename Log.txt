@@ -4,3 +4,47 @@
 13/11/2019 13:52:59 red
 13/11/2019 13:52:59 1
 13/11/2019 13:53:03 jonasd pedea 1245123
+13/11/2019 14:48:28 green
+13/11/2019 14:50:07 Audi 20/11/2019
+13/11/2019 14:50:07  
+13/11/2019 14:50:09 
+13/11/2019 15:02:40 Command:  Status
+13/11/2019 15:02:40 Command:Case 1 - Check avaliablity Status
+13/11/2019 15:04:04 Command:  Statusaudas 512412
+13/11/2019 15:04:04 Command:Case 1 - Check avaliablity Statusaudas 512412
+13/11/2019 15:04:04 Command:Case 1 - Check avaliablity Statusbil blev ikke fundet
+13/11/2019 15:04:08 Command:  StatusAudi 20/11/2019
+13/11/2019 15:04:08 Command:Case 1 - Check avaliablity StatusAudi 20/11/2019
+13/11/2019 15:04:08 Command:Case 1 - Check avaliablity Statusbil blev fundet
+13/11/2019 15:04:08 Command:  Status 
+13/11/2019 15:04:08 Command:case 2 - choose color Status 
+13/11/2019 15:04:08 Command:case 2 - choose color Status red blue black green
+13/11/2019 15:04:11 Command:  Statusred
+13/11/2019 15:04:11 Command:case 3 - choose car Statusred
+13/11/2019 15:04:11 Command:case 3 - choose car StatusAudi red 35000 20/11/2019 -Audi red 45000 20/11/2019 -
+13/11/2019 15:04:12 Command:  Status2
+13/11/2019 15:04:12 Command:case 4 - selecet car Status2
+13/11/2019 15:04:12 Command:case 4 - selecet car Statusselected CAR: Audi red 45000 20/11/2019 
+13/11/2019 15:04:12 Command:case 4 - selecet car Status2
+13/11/2019 15:04:17 Command:  StatusJonas Pedersen 152412851273
+13/11/2019 15:04:17 Command:case 5 - create booking StatusJonas Pedersen 152412851273
+13/11/2019 15:04:17 Command:case 5 - create booking StatusAudi 20/11/2019 Jonas Pedersen 152412851273
+13/11/2019 15:05:50  :  Statusasd 12512
+13/11/2019 15:05:50 Case 1 - Check avaliablity:  Statusasd 12512
+13/11/2019 15:05:50 Case 1 - Check avaliablity:  Statusbil blev ikke fundet
+13/11/2019 15:05:56  :  StatusAudi 20/11/2019
+13/11/2019 15:05:56 Case 1 - Check avaliablity:  StatusAudi 20/11/2019
+13/11/2019 15:05:56 Case 1 - Check avaliablity:  Statusbil blev fundet
+13/11/2019 15:05:56  :  Status 
+13/11/2019 15:05:57 case 2 - choose color:  Status 
+13/11/2019 15:05:57 case 2 - choose color:  Status red blue black green
+13/11/2019 15:05:58  :  Statusred
+13/11/2019 15:05:58 case 3 - choose car:  Statusred
+13/11/2019 15:05:58 case 3 - choose car:  StatusAudi red 35000 20/11/2019 -Audi red 45000 20/11/2019 -
+13/11/2019 15:05:59  :  Status1
+13/11/2019 15:05:59 case 4 - selecet car:  Status1
+13/11/2019 15:05:59 case 4 - selecet car:  Statusselected CAR: Audi red 35000 20/11/2019 
+13/11/2019 15:05:59 case 4 - selecet car:  Status1
+13/11/2019 15:06:01  :  Statusjosngas 1251243124
+13/11/2019 15:06:01 case 5 - create booking:  Statusjosngas 1251243124
+13/11/2019 15:06:01 case 5 - create booking:  StatusAudi 20/11/2019 josngas 1251243124
