@@ -1,50 +1,82 @@
-13/11/2019 13:51:57 jonas PEdaqera
-13/11/2019 13:52:57 Audi 20/11/2019
-13/11/2019 13:52:57  
-13/11/2019 13:52:59 red
-13/11/2019 13:52:59 1
-13/11/2019 13:53:03 jonasd pedea 1245123
-13/11/2019 14:48:28 green
-13/11/2019 14:50:07 Audi 20/11/2019
-13/11/2019 14:50:07  
-13/11/2019 14:50:09 
-13/11/2019 15:02:40 Command:  Status
-13/11/2019 15:02:40 Command:Case 1 - Check avaliablity Status
-13/11/2019 15:04:04 Command:  Statusaudas 512412
-13/11/2019 15:04:04 Command:Case 1 - Check avaliablity Statusaudas 512412
-13/11/2019 15:04:04 Command:Case 1 - Check avaliablity Statusbil blev ikke fundet
-13/11/2019 15:04:08 Command:  StatusAudi 20/11/2019
-13/11/2019 15:04:08 Command:Case 1 - Check avaliablity StatusAudi 20/11/2019
-13/11/2019 15:04:08 Command:Case 1 - Check avaliablity Statusbil blev fundet
-13/11/2019 15:04:08 Command:  Status 
-13/11/2019 15:04:08 Command:case 2 - choose color Status 
-13/11/2019 15:04:08 Command:case 2 - choose color Status red blue black green
-13/11/2019 15:04:11 Command:  Statusred
-13/11/2019 15:04:11 Command:case 3 - choose car Statusred
-13/11/2019 15:04:11 Command:case 3 - choose car StatusAudi red 35000 20/11/2019 -Audi red 45000 20/11/2019 -
-13/11/2019 15:04:12 Command:  Status2
-13/11/2019 15:04:12 Command:case 4 - selecet car Status2
-13/11/2019 15:04:12 Command:case 4 - selecet car Statusselected CAR: Audi red 45000 20/11/2019 
-13/11/2019 15:04:12 Command:case 4 - selecet car Status2
-13/11/2019 15:04:17 Command:  StatusJonas Pedersen 152412851273
-13/11/2019 15:04:17 Command:case 5 - create booking StatusJonas Pedersen 152412851273
-13/11/2019 15:04:17 Command:case 5 - create booking StatusAudi 20/11/2019 Jonas Pedersen 152412851273
-13/11/2019 15:05:50  :  Statusasd 12512
-13/11/2019 15:05:50 Case 1 - Check avaliablity:  Statusasd 12512
-13/11/2019 15:05:50 Case 1 - Check avaliablity:  Statusbil blev ikke fundet
-13/11/2019 15:05:56  :  StatusAudi 20/11/2019
-13/11/2019 15:05:56 Case 1 - Check avaliablity:  StatusAudi 20/11/2019
-13/11/2019 15:05:56 Case 1 - Check avaliablity:  Statusbil blev fundet
-13/11/2019 15:05:56  :  Status 
-13/11/2019 15:05:57 case 2 - choose color:  Status 
-13/11/2019 15:05:57 case 2 - choose color:  Status red blue black green
-13/11/2019 15:05:58  :  Statusred
-13/11/2019 15:05:58 case 3 - choose car:  Statusred
-13/11/2019 15:05:58 case 3 - choose car:  StatusAudi red 35000 20/11/2019 -Audi red 45000 20/11/2019 -
-13/11/2019 15:05:59  :  Status1
-13/11/2019 15:05:59 case 4 - selecet car:  Status1
-13/11/2019 15:05:59 case 4 - selecet car:  Statusselected CAR: Audi red 35000 20/11/2019 
-13/11/2019 15:05:59 case 4 - selecet car:  Status1
-13/11/2019 15:06:01  :  Statusjosngas 1251243124
-13/11/2019 15:06:01 case 5 - create booking:  Statusjosngas 1251243124
-13/11/2019 15:06:01 case 5 - create booking:  StatusAudi 20/11/2019 josngas 1251243124
+13/11/2019 16:12:00  : dsa 1251243
+13/11/2019 16:12:00 Case 1 - Check avaliablity: dsa 1251243
+13/11/2019 16:12:00 Case 1 - Check avaliablity: bil blev ikke fundet
+13/11/2019 16:12:09  : Audi 20/11/2019
+13/11/2019 16:12:09 Case 1 - Check avaliablity: Audi 20/11/2019
+13/11/2019 16:12:09 Case 1 - Check avaliablity: bil blev fundet
+13/11/2019 16:12:09  :  
+13/11/2019 16:12:09 case 2 - choose color:  
+13/11/2019 16:12:09 case 2 - choose color:  red blue black green
+13/11/2019 16:12:20  : red
+13/11/2019 16:12:20 case 3 - choose car: red
+13/11/2019 16:12:20 case 3 - choose car: Audi red 35000 20/11/2019 -Audi red 45000 20/11/2019 -
+13/11/2019 16:12:22  : 2
+13/11/2019 16:12:22 case 4 - selecet car: 2
+13/11/2019 16:12:22 case 4 - selecet car: selected CAR: Audi red 45000 20/11/2019 
+13/11/2019 16:12:22 case 4 - selecet car: 2
+13/11/2019 16:12:26  : jonas Pedersen 12512412312
+13/11/2019 16:12:26 case 5 - create booking: jonas Pedersen 12512412312
+13/11/2019 16:12:26 case 5 - create booking: Audi 20/11/2019 jonas Pedersen 12512412312
+13/11/2019 16:13:00  : Audi 20/11/2019
+13/11/2019 16:13:00 Case 1 - Check avaliablity: Audi 20/11/2019
+13/11/2019 16:13:00 Case 1 - Check avaliablity: bil blev fundet
+13/11/2019 16:13:01  :  
+13/11/2019 16:13:01 case 2 - choose color:  
+13/11/2019 16:13:01 case 2 - choose color:  red blue black green
+13/11/2019 16:13:04  : reed
+13/11/2019 16:13:04 case 3 - choose car: reed
+13/11/2019 16:13:04 case 3 - choose car: 
+13/11/2019 16:16:08  : reed
+13/11/2019 16:16:09 Case 1 - Check avaliablity: reed
+13/11/2019 16:17:26  : Audi 20/11/2019
+13/11/2019 16:17:26 Case 1 - Check avaliablity: Audi 20/11/2019
+13/11/2019 16:17:26 Case 1 - Check avaliablity: bil blev fundet
+13/11/2019 16:17:26  :  
+13/11/2019 16:17:26 case 2 - choose color:  
+13/11/2019 16:17:26 case 2 - choose color:  red blue black green
+13/11/2019 16:17:27  : 
+13/11/2019 16:17:27 case 3 - choose car: 
+13/11/2019 16:17:27 case 3 - choose car: Please type a color to preceed
+13/11/2019 16:17:27 case 3 - choose car: Please type a color to preceed
+13/11/2019 16:17:35  : reeed
+13/11/2019 16:17:35 case 4 - selecet car: reeed
+13/11/2019 16:19:59  : Audi 20/11/2019
+13/11/2019 16:19:59 Case 1 - Check avaliablity: Audi 20/11/2019
+13/11/2019 16:19:59 Case 1 - Check avaliablity: bil blev fundet
+13/11/2019 16:19:59  :  
+13/11/2019 16:19:59 case 2 - choose color:  
+13/11/2019 16:19:59 case 2 - choose color:  red blue black green
+13/11/2019 16:20:01  : reeed
+13/11/2019 16:20:01 case 3 - choose car: reeed
+13/11/2019 16:20:01 case 3 - choose car: Spelling ERORR, please try agian
+13/11/2019 16:20:09  : red
+13/11/2019 16:20:09 case 3 - choose car: red
+13/11/2019 16:20:09 case 3 - choose car: Audi red 35000 20/11/2019 -Audi red 45000 20/11/2019 -
+13/11/2019 16:20:12  : 3
+13/11/2019 16:20:12 case 4 - selecet car: 3
+13/11/2019 16:20:12 case 4 - selecet car: The number is not valid, try with a differnt one
+13/11/2019 16:20:12 case 4 - selecet car: 3
+13/11/2019 16:20:15  : 0
+13/11/2019 16:20:15 case 5 - create booking: 0
+13/11/2019 16:22:20  : 0
+13/11/2019 16:22:20 Case 1 - Check avaliablity: 0
+13/11/2019 16:26:24  : Audi 20/11/2019
+13/11/2019 16:26:24 Case 1 - Check avaliablity: Audi 20/11/2019
+13/11/2019 16:26:24 Case 1 - Check avaliablity: bil blev fundet
+13/11/2019 16:26:24  :  
+13/11/2019 16:26:24 case 2 - choose color:  
+13/11/2019 16:26:24 case 2 - choose color:  red blue black green
+13/11/2019 16:26:26  : red
+13/11/2019 16:26:26 case 3 - choose car: red
+13/11/2019 16:26:26 case 3 - choose car: Audi red 35000 20/11/2019 -Audi red 45000 20/11/2019 -
+13/11/2019 16:26:28  : 0
+13/11/2019 16:26:28 case 4 - selecet car: 0
+13/11/2019 16:26:28 case 4 - selecet car: The number is not valid, try with a differnt one
+13/11/2019 16:26:28 case 4 - selecet car: 0
+13/11/2019 16:26:31  : 1
+13/11/2019 16:26:31 case 4 - selecet car: 1
+13/11/2019 16:26:31 case 4 - selecet car: selected CAR: Audi red 35000 20/11/2019 
+13/11/2019 16:26:31 case 4 - selecet car: 1
+13/11/2019 16:26:36  : Jonas Pedersen 225124312312
+13/11/2019 16:26:36 case 5 - create booking: Jonas Pedersen 225124312312
+13/11/2019 16:26:36 case 5 - create booking: Audi 20/11/2019 Jonas Pedersen 225124312312

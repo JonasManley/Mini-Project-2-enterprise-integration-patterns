@@ -67,8 +67,13 @@ namespace MiniProject2Client
             Console.WriteLine("Write the name of the color you want:");
             var inputColor = Console.ReadLine();
             Console.WriteLine($" [x] Collection the car(s) with the color: {inputColor}");
-            var responeCarColor = Client.Call(inputColor);    
-            if (responeCarColor == "Color not found, please try with another one or check spelling")
+            var responeCarColor = Client.Call(inputColor);  
+            if(responeCarColor == "Please type a color to preceed")
+            {
+                Console.WriteLine($" [.] Got: {responeCarColor}");
+                ColoredCars();
+            }
+            else if (responeCarColor == "Spelling ERORR, please try agian")
             {
                 Console.WriteLine($" [.] Got: {responeCarColor}");
                 ColoredCars();

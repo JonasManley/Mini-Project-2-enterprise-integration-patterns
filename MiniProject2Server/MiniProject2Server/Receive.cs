@@ -160,31 +160,42 @@ namespace MiniProject2Server
                             Console.WriteLine("case 3 - choose car");
                             string statusTest3 = "case 3 - choose car";
                             File.AppendAllText(logPath, TimeStampForLog(statusTest3, message));
-                            foreach (var car in availableCars)
-                            {
-                                if(car.Color == message)
-                                {
-                                    availableCarsByColor.Add(car);
-                                }
-                            }
-                            foreach (var car in availableCarsByColor)
-                            {
-                                response = response + car.ToString() + "-";
-                                
-                                chooseCarList.Add(car);
-                            }
                             if(message == string.Empty)
                             {
-
+                                response = "Please type a color to preceed";
+                                File.AppendAllText(logPath, TimeStampForLog(statusTest3, response));
                             }
-                            File.AppendAllText(logPath, TimeStampForLog(statusTest3, response));
+                            else if (colorsFound.Contains(message) == false)
+                            {
+                                response = "Spelling ERORR, please try agian";
+                                File.AppendAllText(logPath, TimeStampForLog(statusTest3, response));
+                            }
+                            else
+                            {
+                                foreach (var car in availableCars)
+                                {
+                                    if (car.Color == message)
+                                    {
+                                        availableCarsByColor.Add(car);
+                                    }
+                                }
+                                foreach (var car in availableCarsByColor)
+                                {
+                                    response = response + car.ToString() + "-";
 
+                                    chooseCarList.Add(car);
+                                }
+
+                                File.AppendAllText(logPath, TimeStampForLog(statusTest3, response));
+                                caseSwitch += 1;
+                            }
+                            
                             var responseBytesCase3 = Encoding.UTF8.GetBytes(response);
                             channel.BasicPublish(exchange: "", routingKey: props.ReplyTo,
                               basicProperties: replyProps, body: responseBytesCase3);
                             channel.BasicAck(deliveryTag: ea.DeliveryTag,
                               multiple: false);
-                            caseSwitch += 1;
+                            
                             break;
                         case 4:
                             string statusTest4 = "case 4 - selecet car";
@@ -201,6 +212,7 @@ namespace MiniProject2Server
                                 selectedCar = chooseCarList[index];
                                 response = "selected CAR: " + selectedCar.ToString();
                                 File.AppendAllText(logPath, TimeStampForLog(statusTest4, response));
+                                caseSwitch += 1;
                             }
 
                             File.AppendAllText(logPath, TimeStampForLog(statusTest4, message));
@@ -209,7 +221,6 @@ namespace MiniProject2Server
                               basicProperties: replyProps, body: responseBytesCase4);
                             channel.BasicAck(deliveryTag: ea.DeliveryTag,
                               multiple: false);
-                            caseSwitch += 1;
                             break;
                         case 5:
                             string statusTest5 = "case 5 - create booking";
